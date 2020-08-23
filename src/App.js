@@ -5,19 +5,20 @@ import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import About from './components/pages/About';
 import './App.css';
-import { v4 as uuid } from 'uuid';
+import Axios from 'axios';
 
 class App extends Component {
 
+  url = 'https://jsonplaceholder.typicode.com/todos';
+
   state = {
-    todos: [
-      {
-        id: uuid(),
-        title: 'Learn Reactjs',
-        completed: false
-      }
-    ]
+    todos: []
   };
+
+  async componentDidMount() {
+    const res = await Axios.get(this.url);
+    this.setState({ todos: res.data });
+  }
 
   markComplete = (id) => {
     this.setState({
@@ -30,19 +31,22 @@ class App extends Component {
     });
   }
 
-  deleteTodo = (id) => {
+  deleteTodo = async (id) => {
+
+    await Axios.delete(`${this.url}/${id}`);
     this.setState({
       todos: [...this.state.todos.filter(todo => todo.id !== id)]
     })
   }
 
-  addTodo = (title) => {
-    const newTodo = {
-      id: uuid(),
+  addTodo = async (title) => {
+
+    const res = await Axios.post(this.url, {
       title,
-      completed: false
-    };
-    this.setState({ todos: [...this.state.todos, newTodo] });
+      completed: false,
+    });
+
+    this.setState({todos: [...this.state.todos, res.data] });
   };
 
   render() {
@@ -50,7 +54,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header/>
-          <Route exact path="/" render={() => {
+          <Route exact path="/todo-app-react" render={() => {
             return <React.Fragment>
                 <div className="container">
                   <AddTodo addTodo={this.addTodo}/>

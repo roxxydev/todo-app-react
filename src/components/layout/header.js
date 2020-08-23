@@ -5,7 +5,7 @@ function Header() {
     return (
         <header className="header">
             <h1>My Todo List</h1>
-            <Link to="/" className="linkStyle">Home</Link> | <Link to="/about" className="linkStyle">About</Link>
+            <Link to="/todo-app-react" className="linkStyle">Home</Link> | <Link to="/about" className="linkStyle">About</Link>
         </header>
     )
 }
