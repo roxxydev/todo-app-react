@@ -1,0 +1,38 @@
+{
+  "name": "todo-app-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "16.13.x",
+    "react-dom": "16.13.x",
+    "react-router-dom": "5.2.x",
+    "react-scripts": "3.4.x",
+    "uuid": "8.3.x"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/*.js src/**/*.js"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "6.6.0",
+    "eslint-plugin-react": "7.20.6"
+  }
+}

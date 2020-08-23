@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.linkStyle {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.container {
+    padding: 1rem 2rem
+}
+
+.header {
+    background: teal;
+    color: #ffff;
+    text-align: center;
+    padding: 10px;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    background: #555555;
+    color: #ffffff;
+    padding: 7px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #666666;
+}
+
+.btnTodoItemDelete {
+    background: crimson;
+    color: #ffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+}
+
+.todoItem, .todoItemCompleted{
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 2px #ccc dotted;
+    text-decoration: none;
+}
+
+.todoItemCompleted {
+    text-decoration: line-through;
+}
+
+#addTodoForm {
+    display: flex;
+}
+
+#addTodoTextInput {
+    flex: 10;
+    padding: 5px;
+}
