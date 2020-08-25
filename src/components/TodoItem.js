@@ -9,8 +9,8 @@ class TodoItem extends Component {
         return (
             <div className={ this.props.todo.completed ? "todoItemCompleted" : "todoItem" }>
                 <p>
-                <input type="checkbox" onChange={this.props.markComplete.bind(this, id)}/> {title}
-                <button className="btnTodoItemDelete" onClick={this.props.deleteTodo.bind(this, id)}>x</button>
+                <input type="checkbox" onChange={ () => this.props.markComplete(id) }/> {title}
+                <button className="btnTodoItemDelete" onClick={ () => this.props.deleteTodo(id) }>x</button>
                 </p>
             </div>
         )
